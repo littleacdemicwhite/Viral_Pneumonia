@@ -24,18 +24,18 @@ st.markdown("ExtraTrees Classifier for Medical Prognosis Prediction")
 
 # 加载模型和特征
 try:
-    model = joblib.load('C:\\Users\\admin\\Desktop\\ZYF\\saved_models\\medical_risk_model.pkl')
+    model = joblib.load('saved_models\\medical_risk_model.pkl')
     
     # 直接从模型属性获取特征顺序（确保100%正确）
     if hasattr(model, 'feature_names_in_'):
         feature_names = list(model.feature_names_in_)
     else:
         # 备用方案：从文件加载
-        feature_names = joblib.load('C:\\Users\\admin\\Desktop\\ZYF\\saved_models\\medical_risk_model_features.pkl')
+        feature_names = joblib.load('saved_models\\medical_risk_model_features.pkl')
     
     # 加载SHAP解释器
     try:
-        explainer = joblib.load('C:\\Users\\admin\\Desktop\\ZYF\\saved_models\\medical_risk_model_explainer.pkl')
+        explainer = joblib.load('saved_models\\medical_risk_model_explainer.pkl')
     except:
         explainer = None
     
@@ -389,4 +389,5 @@ if st.button('Predict Mortality Risk', type="primary"):
 
 # 页脚
 st.markdown("---")
+
 st.markdown("**Note**: This is a demonstration application. For clinical use, rigorous validation is required.")
