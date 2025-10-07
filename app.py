@@ -62,7 +62,7 @@ with col1:
         elif feature == 'charlson_comorbidity_index':
             input_values[feature] = st.number_input("Charlson Comorbidity Index", min_value=0, max_value=20, value=2, key=feature)
         elif feature == 'bilirubin_total_min':
-            input_values[feature] = st.number_input("Minimum Total Bilirubin (mg/mdl)", min_value=0.0, max_value=50.0, value=1.0, key=feature)
+            input_values[feature] = st.number_input("Minimum Total Bilirubin (mg/ml)", min_value=0.0, max_value=50.0, value=1.0, key=feature)
         elif feature == 'admission_age':
             input_values[feature] = st.number_input("Admission Age (y)", min_value=0, max_value=120, value=65, key=feature)
         elif feature == 'aado2_calc_min':
@@ -391,5 +391,6 @@ if st.button('Predict Mortality Risk', type="primary"):
 st.markdown("---")
 
 st.markdown("**Note**: This is a demonstration application. For clinical use, rigorous validation is required.")
+
 
 
