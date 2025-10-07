@@ -58,15 +58,15 @@ with col1:
         if feature == 'apsiii':
             input_values[feature] = st.number_input("Acute Physiology Score III", min_value=0, max_value=300, value=50, key=feature)
         elif feature == 'resp_rate_min':
-            input_values[feature] = st.number_input("Minimum Respiratory Rate", min_value=0.0, max_value=60.0, value=12.0, key=feature)
+            input_values[feature] = st.number_input("Minimum Respiratory Rate (r/min)", min_value=0.0, max_value=60.0, value=12.0, key=feature)
         elif feature == 'charlson_comorbidity_index':
             input_values[feature] = st.number_input("Charlson Comorbidity Index", min_value=0, max_value=20, value=2, key=feature)
         elif feature == 'bilirubin_total_min':
-            input_values[feature] = st.number_input("Minimum Total Bilirubin", min_value=0.0, max_value=50.0, value=1.0, key=feature)
+            input_values[feature] = st.number_input("Minimum Total Bilirubin (mg/mdl)", min_value=0.0, max_value=50.0, value=1.0, key=feature)
         elif feature == 'admission_age':
-            input_values[feature] = st.number_input("Admission Age", min_value=0, max_value=120, value=65, key=feature)
+            input_values[feature] = st.number_input("Admission Age (y)", min_value=0, max_value=120, value=65, key=feature)
         elif feature == 'aado2_calc_min':
-            input_values[feature] = st.number_input("Minimum A-aDO2", min_value=0.0, max_value=800.0, value=100.0, key=feature)
+            input_values[feature] = st.number_input("Minimum A-aDO2 (cm)", min_value=0.0, max_value=800.0, value=100.0, key=feature)
 
 with col2:
     # 后5个特征 - 特别注意顺序！
@@ -74,13 +74,13 @@ with col2:
         if feature == 'height':
             input_values[feature] = st.number_input("Height (cm)", min_value=100.0, max_value=220.0, value=170.0, key=feature)
         elif feature == 'wbc_max':
-            input_values[feature] = st.number_input("Maximum White Blood Cell Count", min_value=0.0, max_value=50.0, value=10.0, key=feature)
+            input_values[feature] = st.number_input("Maximum White Blood Cell Count (x10^9/L)", min_value=0.0, max_value=50.0, value=10.0, key=feature)
         elif feature == 'dbp_max':  # 注意：这个在第9位
-            input_values[feature] = st.number_input("Maximum Diastolic Blood Pressure", min_value=0.0, max_value=200.0, value=80.0, key=feature)
+            input_values[feature] = st.number_input("Maximum Diastolic Blood Pressure (mmHg)", min_value=0.0, max_value=200.0, value=80.0, key=feature)
         elif feature == 'pao2fio2ratio_min':  # 注意：这个在第10位
             input_values[feature] = st.number_input("Minimum PaO2/FiO2 Ratio", min_value=0.0, max_value=600.0, value=300.0, key=feature)
         elif feature == 'ptt_max':
-            input_values[feature] = st.number_input("Maximum PTT", min_value=0.0, max_value=200.0, value=35.0, key=feature)
+            input_values[feature] = st.number_input("Maximum PTT (s)", min_value=0.0, max_value=200.0, value=35.0, key=feature)
 
 # 预测按钮
 if st.button('Predict Mortality Risk', type="primary"):
@@ -391,4 +391,5 @@ if st.button('Predict Mortality Risk', type="primary"):
 st.markdown("---")
 
 st.markdown("**Note**: This is a demonstration application. For clinical use, rigorous validation is required.")
+
 
